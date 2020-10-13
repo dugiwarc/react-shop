@@ -1,14 +1,23 @@
 {
   "name": "react-store",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/server.js",
+  "type": "module",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "server": "nodemon server/server",
+    "frontend": "yarn --cwd client start",
+    "dev": "concurrently \"yarn run server\" \"yarn run frontend\""
   },
   "repository": "https://github.com/dugiwarc/react-shop.git",
   "author": "dugiwarc <gicubotnaru@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.5"
   }
 }
