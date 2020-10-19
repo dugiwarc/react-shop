@@ -9,7 +9,7 @@ const initialState = {
   products: [],
 };
 
-export const productReducer = (state = initialState, action) => {
+const productListReducer = (state = initialState, action) => {
   const { payload, type } = action;
   switch (type) {
     case PRODUCT_LIST_REQUEST:
@@ -22,3 +22,5 @@ export const productReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default productListReducer;
