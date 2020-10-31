@@ -1,6 +1,5 @@
 /** @format */
 
-import productListReducer from "./productListReducer";
-import productDetailsReducer from "./productDetailReducer";
-
-export { productDetailsReducer, productListReducer };
+export * from "./cartReducer";
+export * from "./productListReducer";
+export * from "./productDetailReducer";
