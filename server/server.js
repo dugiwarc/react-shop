@@ -10,20 +10,25 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 // Routes
 import productRoutes from "./routes/productRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
 const app = express();
 
+// Allow us to accept json data in the body
+app.use(express.json());
+
 connectDatabase();
 
 app.get("/", (req, res) => {
-  res.send("API is running...");
+	res.send("API is running...");
 });
 
 // Mount route
 // anything going to api/products => link to productRoutes
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(notFound);
 
@@ -32,8 +37,8 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 app.listen(
-  PORT,
-  console.log(
-    `Server running in ${process.env.NODE_ENV} on port ${PORT}`.blue.bold
-  )
+	PORT,
+	console.log(
+		`Server running in ${process.env.NODE_ENV} on port ${PORT}`.blue.bold
+	)
 );

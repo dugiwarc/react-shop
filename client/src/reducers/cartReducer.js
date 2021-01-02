@@ -1,6 +1,6 @@
 /** @format */
 
-import { CART_ADD_ITEM } from "../constants/cartConstants";
+import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/cartConstants";
 
 export const cartReducer = (
 	state = {
@@ -17,7 +17,7 @@ export const cartReducer = (
 			if (existsItem) {
 				return {
 					...state,
-					cartItem: state.cartItems.map((item) =>
+					cartItems: state.cartItems.map((item) =>
 						item.product === existsItem.product ? payloadItem : item
 					),
 				};
@@ -27,6 +27,14 @@ export const cartReducer = (
 					cartItems: [...state.cartItems, payloadItem],
 				};
 			}
+
+		case CART_REMOVE_ITEM:
+			return {
+				...state,
+				cartItems: state.cartItems.filter(
+					(item) => item.product !== action.payload
+				),
+			};
 		default:
 			return state;
 	}
