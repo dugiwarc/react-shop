@@ -9,6 +9,7 @@ import Order from "../models/orderModel.js";
 // @route POST /api/orders
 // @access Private
 export const addOrderItems = asyncHandler(async (req, res) => {
+	console.log("Got milk", req.body);
 	const {
 		orderItems,
 		shippingAddress,

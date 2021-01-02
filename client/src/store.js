@@ -8,7 +8,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import {
 	productListReducer,
 	productDetailsReducer,
-	cartReducer,
+	cartReducers,
+	orderCreateReducers,
 	userLoginReducers,
 	userRegisterReducers,
 	userDetailsReducers,
@@ -18,7 +19,8 @@ import {
 const reducer = combineReducers({
 	productList: productListReducer,
 	productDetails: productDetailsReducer,
-	cart: cartReducer,
+	cart: cartReducers,
+	orderCreate: orderCreateReducers,
 	userLogin: userLoginReducers,
 	userRegister: userRegisterReducers,
 	userDetails: userDetailsReducers,

@@ -1,6 +1,7 @@
 /** @format */
 
-export * from "./cartReducer";
+export * from "./cartReducers";
 export * from "./userReducers";
-export * from "./productListReducer";
-export * from "./productDetailReducer";
+export * from "./productListReducers";
+export * from "./orderReducers";
+export * from "./productDetailReducers";
